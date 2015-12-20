@@ -124,9 +124,9 @@ class Container(object):
         self.board = t_board
         return self.board 
 
-def get_connected():
+def get_connected(box):
 
-    container = Container()
+    container = Container(host=box)
     container.recv_until("Please enter your name: ")
     logging.info("got to the name prompt")
     container.send_name()

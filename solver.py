@@ -6,6 +6,12 @@ import tfe
 
 import random
 
+import sys
+if len(sys.argv) > 1:
+    target_box = sys.argv[1]
+else:
+    target_box = '10.67.255.2'
+
 
 #This code was specifically developed using the 2048 game
 #at http://gabrielecirulli.github.io/2048/ running on Mozilla Firefox.
@@ -97,7 +103,7 @@ def solve_recursive(board,cycles):
 
 done = False
 
-container = tfe.get_connected()
+container = tfe.get_connected(target_box)
 
 while container.score < 8096:
 
